@@ -4,7 +4,7 @@ module.export = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     sass: {
       options: {
-        precions: 5
+        precisions: 5
       },
       dev: {
         options: {
@@ -50,7 +50,7 @@ module.export = function(grunt) {
         livereload: true
       },
       css: {
-        files: ['stylesheetd/scss/*.scss'],
+        files: ['stylesheets/scss/*.scss'],
         tasks: ['sass:dev']
       },
       js: {
