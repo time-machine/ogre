@@ -1,10 +1,12 @@
-module.export = function(grunt) {
+module.exports = function(grunt) {
   require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
     sass: {
       options: {
-        precisions: 5
+        precision: 5
       },
       dev: {
         options: {
@@ -12,7 +14,7 @@ module.export = function(grunt) {
           sourcemap: true
         },
         files: {
-          'stylesheets/css/styles.css': 'stylesheets/scss/styles.scss'
+          'stylesheets/css/styles.css' : 'stylesheets/scss/styles.scss'
         }
       },
       prod: {
@@ -21,7 +23,7 @@ module.export = function(grunt) {
           sourcemap: true
         },
         files: {
-          'stylesheets/css/styles.css': 'stylesheets/scss/styles.scss'
+          'stylesheets/css/styles.css' : 'stylesheets/scss/styles.scss'
         }
       }
     },
@@ -33,13 +35,13 @@ module.export = function(grunt) {
         },
         files: {
           // Where to combine and minify JS files, followed by list of which files to include and exclude
-          'js/script.min.js': ['js/scripts/*.js', 'js/script.js']
+          'js/script.min.js' : ['js/scripts/*.js', 'js/script.js']
         }
       },
       prod: {
         files: {
           // Where to combine and minify JS files, followed by list of which files to include and exclude
-          'js/script.min.js': ['js/scripts/*.js', 'js/script.js', '!js/scripts/liveload.js']
+          'js/script.min.js' : ['js/scripts/*.js', 'js/script.js', '!js/scripts/livereload.js']
         }
       }
     },
